@@ -53,8 +53,8 @@
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .potrait {
-      width: 300px;
-      height: 300px;
+      width: 180px;
+      height: 180px;
       background: url("../img/vanilla.jpg");
       background-position: center;
       background-size: cover;
@@ -90,6 +90,39 @@
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
+
+@media screen and (max-width: 480px) {
+  main {
+    align-items: center;
+    text-align: center; }
+  main#home h1 {
+    margin-top: 10vh;
+    justify-content: center;
+    text-align: center;
+    font-size: 80px; } }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    justify-content: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 0px; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: tranlate3d(0, 0, 0); }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(-100%, 0, 0); }
+  .nav-menu {
+    height: 75vh;
+    transform: translate3d(100%, 0, 0); } }
 
 * {
   box-sizing: border-box; }

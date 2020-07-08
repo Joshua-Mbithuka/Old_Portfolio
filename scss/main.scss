@@ -1,5 +1,6 @@
 @import 'classes';
 @import 'menu';
+@import 'media';
 *{box-sizing: border-box;}
 body{
     @include background();
