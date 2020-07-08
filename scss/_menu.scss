@@ -33,3 +33,96 @@
                 }
             }
     }
+//menu overlay
+.menu{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity:0.97;
+    visibility: hidden;
+    &.show{
+        visibility: visible;
+    }
+    &-branding, &-nav
+                {
+                    display: flex;
+                    flex-flow:column wrap;
+                    align-items: center;
+                    justify-content: center;
+                    float: left;
+                    width:50%;
+                    height: 100vh;
+                    overflow:hidden;
+                }
+        //nav side 
+        &-nav
+            {
+                background: darken($primary-color,4);
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                transform: translate3d(0, -100%,0);
+                @include easeout;
+                
+                &.show
+                    {
+                        transform: translate3d(0, 0, 0);
+                    }
+            }
+            //styling the branding side
+        &-branding{
+            background: $primary-color;
+            transform: translate3d(0, 100%,0);
+            @include easeout;
+
+            &.show{
+                //slidein from bottom
+                transform: translate3d(0, 0 ,0);
+            }
+            .potrait{
+                width: 300px;
+                height: 300px;
+                background: url('../img/vanilla.jpg');
+                background-position:center;
+                background-size: cover;
+                border-radius: 50%;
+                border: solid 3px $secondary-color;
+               
+            }
+
+        }
+        .nav-item {
+            transform: translate3d(600px, 0, 0);
+            @include easeout;
+            &.show {
+              // Slide in from right
+              transform: translate3d(0, 0, 0);
+            
+            }
+            &.active >a {
+                color: $secondary-color;
+            }
+            .nav-link{
+                display: inline-block;
+                position: relative;
+                font-size:30px;
+                text-transform: uppercase;
+                font-weight:300;
+                padding: 1rem 0;
+                text-decoration: none;
+                @include easeout; 
+                &:hover{
+                    color: $secondary-color ;
+                }
+            }
+        }
+}
+//creating a delay for the nav-itesm
+@for $x from 1 through 4{//this is just an incremental for loop
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x*0.1s;//so that each one comes separately
+         
+
+    }
+
+}
