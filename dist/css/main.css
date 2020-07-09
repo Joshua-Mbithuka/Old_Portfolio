@@ -122,6 +122,8 @@ h1, h2, h3 {
     font-size: 6rem; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 3rem;
+    margin-top: 100px;
+    justify-content: center;
     padding: 0.2rem 1rem;
     background: #474747; }
 
@@ -139,7 +141,11 @@ header {
 
 main {
   padding: 4rem;
-  min-height: calc(100vh -60px); }
+  min-height: calc(100vh - 60px); }
+  main .wrapper {
+    justify-content: center;
+    padding: 6rem;
+    text-align: center; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -198,11 +204,17 @@ main {
   main {
     align-items: center;
     text-align: center; }
-  main#home h1 {
+  main#home h1, h2 {
     margin-top: 10vh;
     justify-content: center;
     text-align: center;
-    font-size: 80px; } }
+    font-size: 20px;
+    width: 100px; }
+  .channels {
+    padding: 3.75%;
+    grid-template-columns: 45%;
+    grid-column-gap: 0;
+    grid-row-gap: 20px; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -228,4 +240,44 @@ main {
     transform: translate3d(100%, 0, 0); }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .channels {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-areas: 'call' 'phone' 'linkedIn'  'Email'; } }
+
+.channels {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'call call call' 'phone linkedIn Email'; }
+
+.heading {
+  grid-area: call;
+  text-align: center;
+  font-family: 'lucida handwriting';
+  color: #e1c111; }
+
+.email {
+  grid-area: Email;
+  border-bottom: 2px solid #eece1e;
+  background: #515151;
+  justify-content: center;
+  text-align: center;
+  height: 25vh;
+  padding: 2rem; }
+
+.phone {
+  grid-area: phone;
+  border-bottom: 2px solid #eece1e;
+  background: #515151;
+  text-align: center;
+  height: 25vh;
+  padding: 2rem; }
+
+.linkedIn {
+  grid-area: linkedIn;
+  border-bottom: 2px solid #eece1e;
+  background: #515151;
+  height: 25vh;
+  text-align: center;
+  padding: 1.5rem; }
