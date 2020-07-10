@@ -1,4 +1,12 @@
 @include mediasm{
+    .name,.email{width: 100%;}
+    .contact_me
+            {
+                
+                grid-template-columns:1fr;             
+            }
+    .Git_projects{
+        grid-template-columns:  1fr;}
     main{align-items: center;
     text-align: center; 
     }
@@ -9,17 +17,11 @@
         font-size: 20px;
         width: 100px;
     }
-    .channels
-    {
-  padding: 3.75%;
-  grid-template-columns: 45%;
-  grid-column-gap: 0;
-  grid-row-gap: 20px;
-        
-    }
-    
 }
-@include mediamd{
+@include mediamd{      
+    .custom_buttons{height: 40vh;}
+    .Git_projects{
+        grid-template-columns: repeat(2, 1fr);}
     main{
         align-items: center;
         justify-content: center;
@@ -68,8 +70,13 @@
     }
 }
 @include mediawd{
-    
+    .heading{text-align: center;}
+    .Git_projects{
+        grid-template-columns: repeat(3, 1fr);}
 }
 @include mediaxl{
+    .heading{text-align: center;}
+    .Git_projects{
+        grid-template-columns: repeat(4, 1fr);
     
-}
+}}

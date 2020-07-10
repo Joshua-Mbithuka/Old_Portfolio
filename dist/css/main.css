@@ -59,25 +59,25 @@
       background-position: center;
       background-size: cover;
       border-radius: 50%;
-      border: solid 3px #eece1e; }
+      border: solid 3px gold; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.active > a {
-      color: #eece1e; }
+      color: gold; }
     .menu .nav-item .nav-link {
       display: inline-block;
       position: relative;
-      font-size: 30px;
+      font-size: 18px;
       text-transform: uppercase;
       font-weight: 300;
       padding: 1rem 0;
       text-decoration: none;
       transition: all 0.5s ease-out; }
       .menu .nav-item .nav-link:hover {
-        color: #eece1e; }
+        color: gold; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -137,7 +137,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1e; }
+  color: gold; }
 
 main {
   padding: 4rem;
@@ -151,7 +151,7 @@ main {
     main .icons a {
       padding: 0.5rem; }
       main .icons a:hover {
-        color: #eece1e;
+        color: gold;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
@@ -163,20 +163,28 @@ main {
   grid-gap: 30px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 'bioimage bio bio' 'job1 job2 job3'; }
+  .about-info .bio .text-sec {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 4px;
+    color: #ffdb1a; }
+  .about-info .bio .love {
+    font-size: 20px; }
 
 .bio-img {
   grid-area: bioimage;
   border-radius: 50%;
-  border: #eece1e 3px solid;
-  height: 250px;
-  width: 250px; }
+  border: gold 3px solid;
+  height: 200px;
+  width: 200px; }
 
 .bio {
   grid-area: bio;
   font-size: 1.5rem;
   text-align: justify; }
   .bio .text-sec {
-    color: #eece1e;
+    color: gold;
     text-transform: uppercase; }
 
 .job-1 {
@@ -191,7 +199,7 @@ main {
 .job {
   background: #515151;
   padding: 0.3rem;
-  border-bottom: 8px solid #eece1e; }
+  border-bottom: 8px solid gold; }
 
 #main {
   text-align: center;
@@ -200,7 +208,134 @@ main {
   background: #252525;
   height: 60px; }
 
+.Git_projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem; }
+  .Git_projects img {
+    width: 100%;
+    border: 2px solid white; }
+
+.btn-light {
+  display: block;
+  padding: 0.5rem;
+  text-align: center;
+  background: gold; }
+  .btn-light:hover {
+    background: #ffd90f;
+    opacity: 0.8;
+    transition: all 0.5s ease-out; }
+
+.custom_buttons, .contact_me .email, .contact_me .phone, .contact_me .linkedIn {
+  background: #515151;
+  border-bottom: 2px solid gold;
+  height: 20vh;
+  text-align: center;
+  cursor: pointer;
+  padding: 2rem; }
+  .custom_buttons:hover, .contact_me .email:hover, .contact_me .phone:hover, .contact_me .linkedIn:hover {
+    opacity: 0.7;
+    background: #ffdb1a;
+    transition: all 0.5s ease-out;
+    cursor: pointer; }
+
+.heading {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px; }
+
+.contact_me {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem; }
+
+.contact_form {
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 80px 0; }
+  .contact_form button {
+    background: none;
+    color: #70a1ff;
+    border-radius: 8px;
+    border: 1px solid #70a1ff;
+    padding: 12px 40px;
+    cursor: pointer; }
+    .contact_form button:hover {
+      background: gold;
+      cursor: pointer;
+      transition: all 0.5s ease-out;
+      color: white;
+      opacity: 0.6; }
+  .contact_form .inner {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px; }
+  .contact_form h1 {
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px; }
+  .contact_form #message {
+    max-width: 100%;
+    min-width: 100%; }
+  .contact_form .name {
+    float: left;
+    padding: 2rem; }
+  .contact_form .email {
+    float: right; }
+  .contact_form .name, .contact_form .email, .contact_form #message {
+    background: none;
+    border: none;
+    outline: none;
+    text-align: center;
+    border-bottom: 2px solid gold;
+    padding: 10px 6px;
+    margin-bottom: 40px;
+    color: white; }
+
+.spanned {
+  width: 100%;
+  margin-top: 5rem;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  line-height: 0.1em; }
+  .spanned span {
+    color: white;
+    background: #515151;
+    padding: 0 10px; }
+
+.overlayed {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center; }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA; }
+
 @media screen and (max-width: 480px) {
+  .name, .email {
+    width: 100%; }
+  .contact_me {
+    grid-template-columns: 1fr; }
+  .Git_projects {
+    grid-template-columns: 1fr; }
   main {
     align-items: center;
     text-align: center; }
@@ -209,14 +344,13 @@ main {
     justify-content: center;
     text-align: center;
     font-size: 20px;
-    width: 100px; }
-  .channels {
-    padding: 3.75%;
-    grid-template-columns: 45%;
-    grid-column-gap: 0;
-    grid-row-gap: 20px; } }
+    width: 100px; } }
 
 @media screen and (max-width: 768px) {
+  .custom_buttons, .contact_me .email, .contact_me .phone, .contact_me .linkedIn {
+    height: 40vh; }
+  .Git_projects {
+    grid-template-columns: repeat(2, 1fr); }
   main {
     align-items: center;
     justify-content: center;
@@ -245,39 +379,14 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-areas: 'call' 'phone' 'linkedIn'  'Email'; } }
 
-.channels {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'call call call' 'phone linkedIn Email'; }
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .heading {
+    text-align: center; }
+  .Git_projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
-.heading {
-  grid-area: call;
-  text-align: center;
-  font-family: 'lucida handwriting';
-  color: #e1c111; }
-
-.email {
-  grid-area: Email;
-  border-bottom: 2px solid #eece1e;
-  background: #515151;
-  justify-content: center;
-  text-align: center;
-  height: 25vh;
-  padding: 2rem; }
-
-.phone {
-  grid-area: phone;
-  border-bottom: 2px solid #eece1e;
-  background: #515151;
-  text-align: center;
-  height: 25vh;
-  padding: 2rem; }
-
-.linkedIn {
-  grid-area: linkedIn;
-  border-bottom: 2px solid #eece1e;
-  background: #515151;
-  height: 25vh;
-  text-align: center;
-  padding: 1.5rem; }
+@media screen and (min-width: 1171px) {
+  .heading {
+    text-align: center; }
+  .Git_projects {
+    grid-template-columns: repeat(4, 1fr); } }

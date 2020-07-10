@@ -71,6 +71,7 @@ h1,h2,h3
                         }
                     }
             }
+//about info stylesheet
 .about-info
         {
             display: grid;
@@ -78,14 +79,25 @@ h1,h2,h3
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-areas: 'bioimage bio bio'
              'job1 job2 job3';
-            
+            .bio{
+                .text-sec{
+                    text-transform: uppercase;
+                    font-size: 20px;
+                    text-align: center;
+                    letter-spacing: 4px;
+                    color:lighten($color: $secondary-color, $amount: 5);
+                }
+                .love{
+                    font-size: 20px;
+                }
+            }
         }
 .bio-img{
     grid-area: bioimage;
     border-radius: 50%;
     border:$secondary-color 3px solid;
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
 }
 .bio{
     grid-area:bio;
@@ -122,49 +134,168 @@ h1,h2,h3
         background: darken($primary-color,12);
         height:60px ;
     }
-    @import 'media';
-
-    .channels
-    {
+   //projects page stylesheet
+    .Git_projects{
         display: grid;
-        grid-gap:30px;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: 'call call call'
-         'phone linkedIn Email';
-        
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:1rem;
+        img{
+            width: 100%;
+            border: 2px solid white;
+        }
     }
-    .heading
-            {
-                grid-area: call;
-                text-align: center;
-                font-family: 'lucida handwriting';
-                color:darken($secondary-color, 5);
+    //button styling..
+    .btn-light
+        {
+            display:block;
+            padding: 0.5rem;
+            text-align: center;
+            background: $secondary-color;
+            &:hover{
+                background: lighten($secondary-color,3);
+                opacity: 0.8;
+                @include easeout;
 
             }
-    .email
-        {
-            grid-area:Email;
-            border-bottom: 2px solid $secondary-color;
-            background: lighten($primary-color,5);
-            justify-content: center;
-            text-align: center;
-            height: 25vh;
-            padding: 2rem;
         }
-    .phone {
-        grid-area: phone;
-        border-bottom: 2px solid $secondary-color;
-        background: lighten($primary-color, 5);
-        text-align: center;
-        height: 25vh;
-        padding: 2rem;
-    }
-    .linkedIn{
-        grid-area:linkedIn;
-        border-bottom: 2px solid $secondary-color;
-        background: lighten($primary-color, 5);
-        height: 25vh;
-        text-align: center;
-        padding: 1.5rem;
+        //contact page styling
+        .custom_buttons{
+            background: lighten($primary-color,5);
+            border-bottom: 2px solid $secondary-color;
+            height: 20vh;
+            text-align: center;
+            cursor: pointer;
+            padding: 2rem;
+            &:hover
+                    {
+                        opacity: 0.7;
+                        background: lighten($secondary-color,5);
+                        @include easeout;
+                        cursor: pointer;
+                        
+                    }
+        }
+    .heading
+        {
+            
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+    
+    .contact_me
+            {
+                display: grid;
+                grid-template-columns:repeat(3, 1fr);
+                grid-gap: 2rem;
+               
+            .email{
+                @extend .custom_buttons;
+            } 
+            .phone
+                {
+                    @extend .custom_buttons;
+                }  
+            .linkedIn
+                    {
+                        @extend .custom_buttons;
+                    }    
+            }
+//contact form
+.contact_form
+            {
+                margin: 0;
+                box-sizing: border-box;
+                text-align: center;
+                padding: 80px 0;
+                button{
+                    background: none;
+                    color: #70a1ff;
+                    border-radius: 8px;
+                    border: 1px solid #70a1ff ;
+                    padding: 12px 40px;
+                    cursor: pointer;
+                    &:hover
+                            {
+                                background: $secondary-color;
+                                cursor: pointer;
+                                @include easeout;
+                                color: white;
+                                opacity: 0.6;
+                            }
+                }
 
-    }
+                .inner
+                        {
+                            max-width: 600px;
+                            margin:auto;
+                            padding :0 20px;
+                        }
+                h1{
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    margin-bottom: 20px;
+                }
+                #message{
+                    max-width: 100%;
+                    min-width: 100%;
+                }
+                .name{
+                    float: left;
+                    padding: 2rem;
+                               
+                }
+                .email{float: right;}
+                .name,.email,#message{
+                    background: none;
+                    border: none;
+                    outline: none;
+                    text-align: center;
+                    border-bottom: 2px solid $secondary-color;
+                    padding: 10px 6px;
+                    margin-bottom: 40px;
+                    color: white;
+
+                }
+            }
+            .spanned {
+                width: 100%; 
+                margin-top: 5rem;
+                text-align: center; 
+                border-bottom: 1px solid #fff; 
+                line-height: 0.1em;
+                
+                span { 
+                    color: white;
+                    background: lighten($primary-color,5);
+                    padding:0 10px; 
+                }
+             } 
+             .overlayed {
+                color: white;
+                font-size: 20px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                text-align: center;
+              }  
+              .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: .5s ease;
+                background-color: #008CBA;
+              }       
+              
+    
+     @import 'media';
